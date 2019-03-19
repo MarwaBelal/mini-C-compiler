@@ -19,17 +19,20 @@ public class Regex {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String regex = "INT";
-        String sentence = "int i = 5";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(sentence);
+        String FLOAT_LITERAL = "[-+]?[0-9]*\\.?[0-9]+";
+        String INTEGRAL_LITERAL = "\\b[-+]?[0-9]*\\b";
+        String STRING_LITERAL = "\\b\\D+\\b";
+        String string = "mariam 017 1.4";
+        String subst = "";
+        Pattern pattern = Pattern.compile(FLOAT_LITERAL);
+        Matcher matcher = pattern.matcher(string);
         while(matcher.find())
         {
             System.out.println("first: "+matcher.group());
-            System.out.println("first: "+matcher.group(1));
-            System.out.println("first: "+matcher.group(2));
+            //System.out.println("first: "+matcher.group(1));
+            //System.out.println("first: "+matcher.group(2));
         }
-    
+
     }
-    
+
 }
