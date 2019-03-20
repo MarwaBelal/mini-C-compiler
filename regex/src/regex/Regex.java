@@ -22,9 +22,17 @@ public class Regex {
         String FLOAT_LITERAL = "[-+]?[0-9]*\\.?[0-9]+";
         String INTEGRAL_LITERAL = "\\b[-+]?[0-9]*\\b";
         String STRING_LITERAL = "\\b\\D+\\b";
-        String string = "mariam 017 1.4";
+        String CHAR_LITERAL = "\\'[a-z]?\\'"; 
+        String LEFT_CURLY_B = "[a-zA-Z]}";
+        String RIGHT_CURLY_B ="\\{[a-zA-Z]";
+        String LEFT_SQUARE_B = "]";
+        String RIGHT_SQUARE_B = "\\[";
+        String LEFT_ROUND_B = ")";
+        String RIGHT_ROUND_B = "\\(";
+        String COMMA = "";
+        String string = "mariam 017 1.4 'a' {m} [K]( M";
         String subst = "";
-        Pattern pattern = Pattern.compile(FLOAT_LITERAL);
+        Pattern pattern = Pattern.compile(RIGHT_CURLY_B);
         Matcher matcher = pattern.matcher(string);
         while(matcher.find())
         {
