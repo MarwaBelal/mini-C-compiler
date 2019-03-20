@@ -35,3 +35,7 @@
 \bfloat\b <FLOAT>
 \bfor\b <FOR>
 \b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
+\{ <LEFT_CURLY_B>
+\} <RIGHT_CURLY_B>
+\( <LEFT_SQUARE_B>
+\) <RIGHT_SQUARE_B>
