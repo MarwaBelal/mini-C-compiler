@@ -21,68 +21,69 @@ import java.util.regex.PatternSyntaxException;
  */
 public class Compilers1 {
 
-    private static final String FILENAME = "C:\\Users\\LENOVO\\Desktop\\REs.txt";
+    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
 
-	public static void main(String[] args) {
-            List<String> output = new ArrayList<String>();
-            BufferedReader br = null;
-            FileReader fr = null;
-            String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1";
-            String sInput[];
-            //sInput = input.split(" |\\(|\\)");
-            sInput = input.split("(?=\\))|(?<=\\()| ");
-            for (int i=0; i<sInput.length ; i++){
-                System.out.println(sInput[i]);
-                
-            }
-            for (int i=0; i<sInput.length ; i++){
-		try {
+    public static void main(String[] args) {
+        List<String> output = new ArrayList<String>();
+        BufferedReader br = null;
+        FileReader fr = null;
+        String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1 A != b = 4";
+        String sInput[];
+        //sInput = input.split(" |\\(|\\)");
+        sInput = input.split("(?=\\))|(?<=\\()| ");
+        for (int i = 0; i < sInput.length; i++) {
+            System.out.println(sInput[i]);
 
-			//br = new BufferedReader(new FileReader(FILENAME));
-			fr = new FileReader(FILENAME);
-			br = new BufferedReader(fr);
+        }
+        for (int i = 0; i < sInput.length; i++) {
+            try {
 
-			String sCurrentLine;
-                        String record;
-                        String regex[];
-			while ((record = br.readLine()) != null) {
-				//System.out.println(record);
-                                regex = record.split(" ");
-                                Pattern pattern = Pattern.compile(regex[0]);
-                                Matcher matcher = pattern.matcher(sInput[i]);
-                                //System.out.println(sInput[i]);
-                                if (matcher.find())
-                                {
-                                    output.add(regex[1]);
-                                    break;
-                                }
-			}
+                //br = new BufferedReader(new FileReader(FILENAME));
+                fr = new FileReader(FILENAME);
+                br = new BufferedReader(fr);
 
-		} catch (IOException e) {
+                String sCurrentLine;
+                String record;
+                String regex[];
+                while ((record = br.readLine()) != null) {
+                    //System.out.println(record);
+                    regex = record.split(" ");
+                    Pattern pattern = Pattern.compile(regex[0]);
+                    Matcher matcher = pattern.matcher(sInput[i]);
+                    //System.out.println(sInput[i]);
+                    if (matcher.find()) {
+                        output.add(regex[1]);
+                        break;
+                    }
+                }
 
-			e.printStackTrace();
+            } catch (IOException e) {
 
-		} finally {
+                e.printStackTrace();
 
-			try {
+            } finally {
 
-				if (br != null)
-					br.close();
+                try {
 
-				if (fr != null)
-					fr.close();
+                    if (br != null) {
+                        br.close();
+                    }
 
-			} catch (IOException ex) {
+                    if (fr != null) {
+                        fr.close();
+                    }
 
-				ex.printStackTrace();
+                } catch (IOException ex) {
 
-			}
+                    ex.printStackTrace();
 
-		}
-	}
-            for (int i=0; i<output.size() ; i++){
-                System.out.println(output.get(i));
+                }
+
             }
         }
+        for (int i = 0; i < output.size(); i++) {
+            System.out.println(output.get(i));
+        }
+    }
 
 }
