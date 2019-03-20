@@ -19,8 +19,8 @@ public class Regex {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String FLOAT_LITERAL = "[-+]?[0-9]*\\.?[0-9]+";
         String INTEGRAL_LITERAL = "\\b[-+]?[0-9]*\\b";
+        String FLOAT_LITERAL = "[-+]?[0-9]*\\.?[0-9]+";
         String STRING_LITERAL = "\\b\\D+\\b";
         String CHAR_LITERAL = "\\'[a-z]?\\'"; 
         String LEFT_CURLY_B = "[a-zA-Z]}";
@@ -29,10 +29,17 @@ public class Regex {
         String RIGHT_SQUARE_B = "\\[";
         String LEFT_ROUND_B = ")";
         String RIGHT_ROUND_B = "\\(";
-        String COMMA = "";
-        String string = "mariam 017 1.4 'a' {m} [K]( M";
-        String subst = "";
-        Pattern pattern = Pattern.compile(RIGHT_CURLY_B);
+        String COMMA = ",";
+        String SEMICOLON = ";";
+        String DOT = "\\.";
+        String NOT = "!";
+        String ASSIGN_OPERATOR = "=";
+        String PREPROCESSOR = "#";
+        String BACKWARD_SLASH = "\\\\";
+        String MINUS = "-";
+        String PLUS = "\\+";
+        String string = "mariam 017 1.4 'a' {m} [K]( M, ,MARIAM j ; int a + h != 3 \\ mo ";
+        Pattern pattern = Pattern.compile(PLUS);
         Matcher matcher = pattern.matcher(string);
         while(matcher.find())
         {
