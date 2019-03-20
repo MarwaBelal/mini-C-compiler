@@ -27,10 +27,13 @@ public class Compilers1 {
             List<String> output = new ArrayList<String>();
             BufferedReader br = null;
             FileReader fr = null;
-            String input = "if int static 0 90 111 1nagham nagham3 _1";
+            String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1";
             String sInput[];
-            sInput = input.split(" |\\(|\\)");
-            
+            //sInput = input.split(" |\\(|\\)");
+            sInput = input.split("(?=\\))|(?<=\\()| ");
+            for (int i=0; i<sInput.length ; i++){
+                System.out.println(sInput[i]);
+            }
             for (int i=0; i<sInput.length ; i++){
 		try {
 
@@ -46,16 +49,14 @@ public class Compilers1 {
                                 regex = record.split(" ");
                                 Pattern pattern = Pattern.compile(regex[0]);
                                 Matcher matcher = pattern.matcher(sInput[i]);
-                                //System.out.println(matcher);
+                                //System.out.println(sInput[i]);
                                 if (matcher.find())
                                 {
+                                    System.out.println(sInput[i]);
+                                    System.out.println("found");
                                     output.add(regex[1]);
                                     break;
                                 }
-                                
-                                
-                                
-                                
 			}
 
 		} catch (IOException e) {
@@ -74,7 +75,7 @@ public class Compilers1 {
 
 			} catch (IOException ex) {
 
-				//ex.printStackTrace();
+				ex.printStackTrace();
 
 			}
 
@@ -84,7 +85,5 @@ public class Compilers1 {
                 System.out.println(output.get(i));
             }
         }
-
-   
 
 }
