@@ -14,7 +14,6 @@
 \bvoid\b <VOID>
 \bvolatile\b <VIOLATIE>
 \bwhile\b <WHILE>
-<<<<<<< HEAD
 \b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
 \b[0-9][0-9]*\b <NTEGRAL_LITERAL>
 \\b[-+]?[0-9]*\\b <INTEGRAL_LITERAL>
@@ -36,7 +35,6 @@
 \\\\ <BACKWARD_SLASH>
 - <MINUS>
 \\+ <PLUS>
-=======
 \b[0-9][0-9]*\b <INTEGRAL_LITERAL>
 \bauto\b <AUTO>
 \bnew\b <NEW>
@@ -58,4 +56,3 @@
 \bfloat\b <FLOAT>
 \bfor\b <FOR>
 \b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
->>>>>>> 280b1a6402202b05383447b528f89e5cdabf86eb
