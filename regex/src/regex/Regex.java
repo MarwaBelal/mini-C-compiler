@@ -19,6 +19,7 @@ public class Regex {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         String INTEGRAL_LITERAL = "\\b[-+]?[0-9]*\\b";
         String FLOAT_LITERAL = "[-+]?[0-9]*\\.?[0-9]+";
         String STRING_LITERAL = "\\b\\D+\\b";
@@ -39,7 +40,7 @@ public class Regex {
         String MINUS = "-";
         String PLUS = "\\+";
         String string = "mariam 017 1.4 'a' {m} [K]( M, ,MARIAM j ; int a + h != 3 \\ mo ";
-        Pattern pattern = Pattern.compile(PLUS);
+        Pattern pattern = Pattern.compile(LEFT_SQUARE_B);
         Matcher matcher = pattern.matcher(string);
         while(matcher.find())
         {

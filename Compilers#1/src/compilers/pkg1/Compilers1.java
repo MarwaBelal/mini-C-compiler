@@ -21,23 +21,21 @@ import java.util.regex.PatternSyntaxException;
  */
 public class Compilers1 {
 
-    private static final String FILENAME = "C:\\Users\\LENOVO\\Desktop\\REs.txt";
+    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
 
 	public static void main(String[] args) {
             List<String> output = new ArrayList<String>();
             BufferedReader br = null;
             FileReader fr = null;
-            String input = "if int static 0 90 111 1nagham nagham3 _1";
+            String input = "if int static 0 90 111 1nagham [ m] 1 . 5 mari , am ; != 'a'";
             String sInput[];
             sInput = input.split(" |\\(|\\)");
-            
             for (int i=0; i<sInput.length ; i++){
 		try {
 
 			//br = new BufferedReader(new FileReader(FILENAME));
 			fr = new FileReader(FILENAME);
 			br = new BufferedReader(fr);
-
 			String sCurrentLine;
                         String record;
                         String regex[];
@@ -52,10 +50,7 @@ public class Compilers1 {
                                     output.add(regex[1]);
                                     break;
                                 }
-                                
-                                
-                                
-                                
+       
 			}
 
 		} catch (IOException e) {
