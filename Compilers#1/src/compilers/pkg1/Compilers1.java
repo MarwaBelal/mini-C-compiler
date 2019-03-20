@@ -30,9 +30,10 @@ public class Compilers1 {
             String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1";
             String sInput[];
             //sInput = input.split(" |\\(|\\)");
-            sInput = input.split("(?=\\))|(?<=\\()| ");
+            sInput = input.split("( ?=\\) )|( ?<=\\( )| ");
             for (int i=0; i<sInput.length ; i++){
                 System.out.println(sInput[i]);
+                
             }
             for (int i=0; i<sInput.length ; i++){
 		try {
