@@ -27,10 +27,10 @@ public class Compilers1 {
             List<String> output = new ArrayList<String>();
             BufferedReader br = null;
             FileReader fr = null;
-            String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1 auto true false EOF for do ";
+            String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1";
             String sInput[];
             //sInput = input.split(" |\\(|\\)");
-            sInput = input.split("( ?=\\) )|( ?<=\\( )| ");
+            sInput = input.split("(?=\\))|(?<=\\()| ");
             for (int i=0; i<sInput.length ; i++){
                 System.out.println(sInput[i]);
                 
@@ -53,8 +53,6 @@ public class Compilers1 {
                                 //System.out.println(sInput[i]);
                                 if (matcher.find())
                                 {
-                                    System.out.println(sInput[i]);
-                                    System.out.println("found");
                                     output.add(regex[1]);
                                     break;
                                 }
