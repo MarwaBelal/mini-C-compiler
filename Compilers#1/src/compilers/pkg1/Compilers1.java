@@ -27,7 +27,7 @@ public class Compilers1 {
             List<String> output = new ArrayList<String>();
             BufferedReader br = null;
             FileReader fr = null;
-            String input = "if int static 0 90 111 1nagham nagham3 _1";
+            String input = "if int static 0 90 111 1nagham nagham3 _1 auto true false EOF for do";
             String sInput[];
             sInput = input.split(" |\\(|\\)");
             
