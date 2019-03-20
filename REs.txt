@@ -14,5 +14,5 @@
 \bvoid\b <VOID>
 \bvolatile\b <VIOLATIE>
 \bwhile\b <WHILE>
-[0-9]*[_a-zA-Z][_a-zA-Z0-9]* <ID>
-[0-9][0-9]* <NTEGRAL_LITERAL>
+\b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
+\b[0-9][0-9]*\b <NTEGRAL_LITERAL>
