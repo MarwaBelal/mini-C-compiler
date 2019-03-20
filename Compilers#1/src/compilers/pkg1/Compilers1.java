@@ -51,40 +51,24 @@ public class Compilers1 {
                                 {
                                     output.add(regex[1]);
                                     break;
-                                }
-                                
-                                
-                                
-                                
+                                }           
 			}
 
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		} finally {
-
 			try {
-
 				if (br != null)
 					br.close();
-
 				if (fr != null)
 					fr.close();
-
 			} catch (IOException ex) {
-
 				//ex.printStackTrace();
-
 			}
-
 		}
 	}
             for (int i=0; i<output.size() ; i++){
                 System.out.println(output.get(i));
             }
-        }
-
-   
-
+        }   
 }
