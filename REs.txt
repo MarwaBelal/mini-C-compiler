@@ -14,6 +14,7 @@
 \bvoid\b <VOID>
 \bvolatile\b <VIOLATIE>
 \bwhile\b <WHILE>
+<<<<<<< HEAD
 \b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
 \b[0-9][0-9]*\b <NTEGRAL_LITERAL>
 \\b[-+]?[0-9]*\\b <INTEGRAL_LITERAL>
@@ -35,3 +36,26 @@
 \\\\ <BACKWARD_SLASH>
 - <MINUS>
 \\+ <PLUS>
+=======
+\b[0-9][0-9]*\b <INTEGRAL_LITERAL>
+\bauto\b <AUTO>
+\bnew\b <NEW>
+\b0\b <EOF>
+\btrue\b <TRUE>
+\bfalse\b <FALSE>
+\bbreak\b <BREAK>
+\bbool\b <BOOL>
+\bcase\b <CASE>
+\bchar\b <CHAR>
+\bconst\b <CONST>
+\bcontinue\b <CONTINUE>
+\bdefault\b <DEFAULT>
+\bdo\b <DO>
+\bdouble\b <DOUBLE>
+\belse\b <ELSE>
+\benum\b <ENUM>
+\bextern\b <EXTERN>
+\bfloat\b <FLOAT>
+\bfor\b <FOR>
+\b[0-9]*[_a-zA-Z][_a-zA-Z0-9]*\b <ID>
+>>>>>>> 280b1a6402202b05383447b528f89e5cdabf86eb

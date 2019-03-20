@@ -27,7 +27,11 @@ public class Compilers1 {
             List<String> output = new ArrayList<String>();
             BufferedReader br = null;
             FileReader fr = null;
+<<<<<<< HEAD
             String input = "if int static 0 90 111 1nagham [ m] 1 . 5 mari , am ; != 'a'";
+=======
+            String input = "if int static 0 90 111 1nagham nagham3 _1 auto true false EOF for do";
+>>>>>>> 280b1a6402202b05383447b528f89e5cdabf86eb
             String sInput[];
             sInput = input.split(" |\\(|\\)");
             for (int i=0; i<sInput.length ; i++){
@@ -49,37 +53,29 @@ public class Compilers1 {
                                 {
                                     output.add(regex[1]);
                                     break;
+<<<<<<< HEAD
                                 }
        
+=======
+                                }           
+>>>>>>> 280b1a6402202b05383447b528f89e5cdabf86eb
 			}
 
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		} finally {
-
 			try {
-
 				if (br != null)
 					br.close();
-
 				if (fr != null)
 					fr.close();
-
 			} catch (IOException ex) {
-
 				//ex.printStackTrace();
-
 			}
-
 		}
 	}
             for (int i=0; i<output.size() ; i++){
                 System.out.println(output.get(i));
             }
-        }
-
-   
-
+        }   
 }
