@@ -1,2 +1,2 @@
-int intvalue == 10 + 5 ;
+int intvalue >= 10 + 5 ;
 // mariam
