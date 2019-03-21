@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package compilers.pkg1;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -20,17 +17,24 @@ import java.util.regex.PatternSyntaxException;
  * @author Nagham
  */
 public class Compilers1 {
-
-    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
-
-    public static void main(String[] args) {
+    public static String readFileAsString(String fileName)throws Exception 
+  { 
+    String data = ""; 
+    data = new String(Files.readAllBytes(Paths.get(fileName))); 
+    return data; 
+  } 
+    private static final String FILENAME = "C:\\Users\\Belal\\Desktop\\REs.txt";
+    
+    public static void main(String[] args) throws Exception {
+        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt"); 
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
-        String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1 A != b = 4";
+        //String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1 A != b = 4";
         String sInput[];
         //sInput = input.split(" |\\(|\\)");
-        sInput = input.split("(?=\\))|(?<=\\()| ");
+        //sInput = input.split("(?=\\))|(?<=\\()| ");
+        sInput = data.split("(?=\\))|(?<=\\()| ");
         for (int i = 0; i < sInput.length; i++) {
             System.out.println(sInput[i]);
 
@@ -56,34 +60,24 @@ public class Compilers1 {
                         break;
                     }
                 }
-
             } catch (IOException e) {
-
                 e.printStackTrace();
-
             } finally {
 
                 try {
-
                     if (br != null) {
                         br.close();
                     }
-
                     if (fr != null) {
                         fr.close();
                     }
-
                 } catch (IOException ex) {
-
                     ex.printStackTrace();
-
                 }
-
             }
         }
         for (int i = 0; i < output.size(); i++) {
             System.out.println(output.get(i));
         }
     }
-
 }
