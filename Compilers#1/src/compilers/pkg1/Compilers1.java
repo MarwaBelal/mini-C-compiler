@@ -19,7 +19,6 @@ import java.io.*;
  * @author Nagham
  */
 public class Compilers1 {
-<<<<<<< HEAD
     public static String readFileAsString(String fileName)throws Exception 
   { 
     String data = ""; 
@@ -30,7 +29,6 @@ public class Compilers1 {
     
     public static void main(String[] args) throws Exception {
         String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt"); 
-=======
 
     public static String readFileAsString(String fileName) throws Exception {
 
@@ -43,7 +41,6 @@ public class Compilers1 {
     public static void main(String[] args) throws Exception {
 
         String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt");
->>>>>>> 316989f13f4ee893fee2eb1589fea62fcad3dd32
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
