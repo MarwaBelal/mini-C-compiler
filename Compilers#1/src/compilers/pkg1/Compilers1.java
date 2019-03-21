@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -11,12 +12,14 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+import java.io.*;
 
 /**
  *
  * @author Nagham
  */
 public class Compilers1 {
+<<<<<<< HEAD
     public static String readFileAsString(String fileName)throws Exception 
   { 
     String data = ""; 
@@ -27,6 +30,20 @@ public class Compilers1 {
     
     public static void main(String[] args) throws Exception {
         String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt"); 
+=======
+
+    public static String readFileAsString(String fileName) throws Exception {
+
+        String data = "";
+        data = new String(Files.readAllBytes(Paths.get(fileName)));
+        return data;
+    }
+    private static final String REs = "C:\\Users\\Belal\\Desktop\\REs.txt";
+
+    public static void main(String[] args) throws Exception {
+
+        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt");
+>>>>>>> 316989f13f4ee893fee2eb1589fea62fcad3dd32
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
@@ -43,7 +60,7 @@ public class Compilers1 {
             try {
 
                 //br = new BufferedReader(new FileReader(FILENAME));
-                fr = new FileReader(FILENAME);
+                fr = new FileReader(REs);
                 br = new BufferedReader(fr);
 
                 String sCurrentLine;
@@ -76,8 +93,11 @@ public class Compilers1 {
                 }
             }
         }
+        PrintWriter out = new PrintWriter("C:\\Users\\Belal\\Desktop\\output.txt");
         for (int i = 0; i < output.size(); i++) {
-            System.out.println(output.get(i));
+            out.println(output.get(i)+" : ");
+            System.out.println(output.get(i)+" : ");
         }
+        out.close();
     }
 }
