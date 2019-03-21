@@ -36,6 +36,7 @@ public class Compilers1 {
         FileReader fr = null;
         List<String> sInput = new ArrayList<String>();
         String x[];
+        System.out.println("kl");
         System.out.println(data);
         String lines[] = data.split("\n|(?<=\\n)");
         int counter = 0;
@@ -48,61 +49,64 @@ public class Compilers1 {
             }
             if (lines[i].contains("/*")) {
                 multi = lines[i];
-                System.out.println("hnaa "+ multi);
+                System.out.println("hnaa " + multi);
                 int j;
-                for( j=i+1 ; j < lines.length; j++)
-                {
-                    if(lines[j].contains("*/"))
-                    {
+                for (j = i + 1; j < lines.length; j++) {
+                    if (lines[j].contains("*/")) {
                         multi += lines[j];
-                        System.out.println("hnaaaaaaaaaaaaaaaaaaaaa "+ multi);
+                        System.out.println("hnaaaaaaaaaaaaaaaaaaaaa " + multi);
                         break;
                     }
                     System.out.println("okayy");
-                    System.out.println(j+" "+ lines[j]);
-                    multi = multi+ lines[j];
+                    System.out.println(j + " " + lines[j]);
+                    multi = multi + lines[j];
                     System.out.println(multi);
                 }
-                /*sInput.add(lines[i]);
-                for (int j = i + 1; j < lines.length; j++) {
-                    if (lines[j].contains("")) {
-                        sInput.add(lines[j]);
-                        continue;
-                    }
-                    sInput.add(lines[j]);
-                }*/
+
                 sInput.add(multi);
-                i +=j;
+                i += j;
             }
-            
+
             x = lines[i].split("(?<=\\(|\\[|\\{|=|\\+|-|/|\\*|!)|(?=\\)|\\]|\\}|=|\\+|-|/|\\*|!)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
+
             for (int j = 0; j < x.length; j++) {
-                System.out.println(x[j]);
+
+                System.out.println(j + "    " + x[j]);
                 sInput.add(x[j]);
             }
-            
+
         }
         int c = 0;
-        for (int i = 0; i < sInput.size(); i++) {
-            sInput.set(i, sInput.get(i).trim());
-            System.out.println(sInput.get(i));
-        }
 
         for (int i = 0; i < sInput.size(); i++) {
+            sInput.set(i, sInput.get(i).trim());
+            System.out.println("ppppppppppppppppp");
+            System.out.println(sInput.get(i));
+        }
+        List<String> sInput2 = new ArrayList<String>();
+        for (int y = 0; y < sInput.size(); y++) {
+            if (sInput.get(y).isEmpty()) {
+                continue;
+            }
+            System.out.println("yyyyyyyyyyyyyyyy " + y + "  " + sInput.get(y));
+            sInput2.add(sInput.get(y));
+        }
+
+        for (int i = 0; i < sInput2.size(); i++) {
             try {
                 fr = new FileReader(FILENAME);
                 br = new BufferedReader(fr);
                 String sCurrentLine;
                 String record;
                 String regex[];
-                System.out.println(sInput.get(i));
+                System.out.println(sInput2.get(i));
                 while ((record = br.readLine()) != null) {
                     regex = record.split(" ");
                     Pattern pattern = Pattern.compile(regex[0]);
-                    Matcher matcher = pattern.matcher(sInput.get(i));
+                    Matcher matcher = pattern.matcher(sInput2.get(i));
 
                     if (matcher.find()) {
-                        output.add(new Pair<String, String>(sInput.get(i), regex[1]));
+                        output.add(new Pair<String, String>(sInput2.get(i), regex[1]));
                         break;
                     }
                     if (!matcher.find()) {
