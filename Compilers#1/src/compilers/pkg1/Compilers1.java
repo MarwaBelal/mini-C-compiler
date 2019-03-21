@@ -29,8 +29,23 @@ public class Compilers1 {
     
     public static void main(String[] args) throws Exception {
         String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt"); 
+<<<<<<< HEAD
     
  
+=======
+
+    public static String readFileAsString(String fileName) throws Exception {
+
+        String data = "";
+        data = new String(Files.readAllBytes(Paths.get(fileName)));
+        return data;
+    }
+    private static final String REs = "C:\\Users\\Belal\\Desktop\\REs.txt";
+
+    public static void main(String[] args) throws Exception {
+
+        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt");
+>>>>>>> a3479547aa2f4fde2af3c06e572df96b00efbe65
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
