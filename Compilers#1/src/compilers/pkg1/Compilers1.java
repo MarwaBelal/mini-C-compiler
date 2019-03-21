@@ -19,31 +19,18 @@ import java.io.*;
  * @author Nagham
  */
 public class Compilers1 {
-<<<<<<< HEAD
     public static String readFileAsString(String fileName)throws Exception 
   { 
     String data = ""; 
     data = new String(Files.readAllBytes(Paths.get(fileName))); 
     return data; 
   } 
-    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
+    private static final String REs = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
     
     public static void main(String[] args) throws Exception {
         String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt"); 
-=======
-
-    public static String readFileAsString(String fileName) throws Exception {
-
-        String data = "";
-        data = new String(Files.readAllBytes(Paths.get(fileName)));
-        return data;
-    }
-    private static final String REs = "C:\\Users\\Belal\\Desktop\\REs.txt";
-
-    public static void main(String[] args) throws Exception {
-
-        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt");
->>>>>>> 316989f13f4ee893fee2eb1589fea62fcad3dd32
+    
+ 
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
@@ -93,7 +80,7 @@ public class Compilers1 {
                 }
             }
         }
-        PrintWriter out = new PrintWriter("C:\\Users\\Belal\\Desktop\\output.txt");
+        PrintWriter out = new PrintWriter("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\output.txt");
         for (int i = 0; i < output.size(); i++) {
             out.println(output.get(i)+" : ");
             System.out.println(output.get(i)+" : ");
