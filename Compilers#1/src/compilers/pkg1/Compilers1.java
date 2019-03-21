@@ -43,6 +43,7 @@ public class Compilers1 {
             System.out.println(sInput[i]);
 
         }
+        String error = "error msg";
         for (int i = 0; i < sInput.length; i++) {
             try {
 
@@ -60,8 +61,13 @@ public class Compilers1 {
                     Matcher matcher = pattern.matcher(sInput[i]);
                     //System.out.println(sInput[i]);
                     if (matcher.find()) {
+                        //System.out.println("mariam");
                         output.add(regex[1]);
                         break;
+                    }
+                    else
+                    {
+                        //output.add(error);
                     }
                 }
             } catch (IOException e) {

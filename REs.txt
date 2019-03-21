@@ -40,7 +40,7 @@
 \\'[a-z]?\\' <CHAR_LITERAL>
 } <LEFT_CURLY_B>
 \{ <RIGHT_CURLY_B>
-[a-zA-Z]*] <LEFT_SQUARE_B>
+] <LEFT_SQUARE_B>
 \[ <RIGHT_SQUARE_B>
 \) <LEFT_ROUND_B>
 \( <RIGHT_ROUND_B>
@@ -63,12 +63,12 @@
 == <EQUAL>
 != <NOT_EQUAL>
 && <AND>
+&{1,1} <BITWISE_AND>
 || <OR>
-& <BITWISE_AND>
-| <BITWISE_OR>
+|{1,1} <BITWISE_OR>
 ^ <BITWISE_XOR>
 >> <LEFT_SHIFT>
 << <RIGHT_SHIFT>
 ~ <BITWISE_NOT>
-///*///w//*/ <MULTI_COMMENT>
+/*//w**/<MULTI_COMMENT>
 // <SINGLE_COMMENT>
