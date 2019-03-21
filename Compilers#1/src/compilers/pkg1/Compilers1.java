@@ -23,10 +23,10 @@ public class Compilers1 {
     data = new String(Files.readAllBytes(Paths.get(fileName))); 
     return data; 
   } 
-    private static final String FILENAME = "C:\\Users\\Belal\\Desktop\\REs.txt";
+    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
     
     public static void main(String[] args) throws Exception {
-        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt"); 
+        String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt"); 
         List<String> output = new ArrayList<String>();
         BufferedReader br = null;
         FileReader fr = null;
