@@ -51,7 +51,6 @@
 \\. <DOT>
 !\b <NOT>
 =[0-9]* <ASSIGN_OPERATOR>
-=======
 ! <NOT>
 = <ASSIGN_OPERATOR>
 # <PREPROCESSOR>

@@ -27,10 +27,10 @@ public class Compilers1 {
         data = new String(Files.readAllBytes(Paths.get(fileName)));
         return data;
     }
-    private static final String FILENAME = "C:\\Users\\Belal\\Desktop\\REs.txt";
+    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
 
     public static void main(String[] args) throws Exception {
-        String data = readFileAsString("C:\\Users\\Belal\\Desktop\\test.txt");
+        String data = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\test.txt");
         ArrayList<Pair<String, String>> output = new ArrayList<Pair<String, String>>();
         BufferedReader br = null;
         FileReader fr = null;
@@ -39,18 +39,45 @@ public class Compilers1 {
         System.out.println(data);
         String lines[] = data.split("\n|(?<=\\n)");
         int counter = 0;
+        String multi = " ";
         for (int i = 0; i < lines.length; i++) {
             System.out.println(i + lines[i]);
             if (lines[i].contains("//")) {
                 sInput.add(lines[i]);
                 continue;
             }
+            if (lines[i].contains("/*")) {
+                multi = lines[i];
+                System.out.println("hnaa "+ multi);
+                for(int j = i+1; j < lines.length; j++)
+                {
+                    if(lines[j].contains("*/"))
+                    {
+                        multi += lines[j];
+                        System.out.println("hnaaaaaaaaaaaaaaaaaaaaa "+ multi);
+                        break;
+                    }
+                    multi += lines[j];
+                }
+                /*sInput.add(lines[i]);
+                for (int j = i + 1; j < lines.length; j++) {
+                    if (lines[j].contains("")) {
+                        sInput.add(lines[j]);
+                        continue;
+                    }
+                    sInput.add(lines[j]);
+                }*/
+                sInput.add(multi);
+            }
+            
             x = lines[i].split("(?<=\\(|\\[|\\{|=|\\+|-|/|\\*|!)|(?=\\)|\\]|\\}|=|\\+|-|/|\\*|!)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
             for (int j = 0; j < x.length; j++) {
                 System.out.println(x[j]);
                 sInput.add(x[j]);
             }
+            
         }
+        int c = 0;
         for (int i = 0; i < sInput.size(); i++) {
             sInput.set(i, sInput.get(i).trim());
             System.out.println(sInput.get(i));
@@ -68,9 +95,13 @@ public class Compilers1 {
                     regex = record.split(" ");
                     Pattern pattern = Pattern.compile(regex[0]);
                     Matcher matcher = pattern.matcher(sInput.get(i));
+
                     if (matcher.find()) {
                         output.add(new Pair<String, String>(sInput.get(i), regex[1]));
                         break;
+                    }
+                    if (!matcher.find()) {
+                        //System.out.println("kk");
                     }
                 }
             } catch (IOException e) {
@@ -88,7 +119,10 @@ public class Compilers1 {
                 }
             }
         }
-        PrintWriter out = new PrintWriter("C:\\Users\\Belal\\Desktop\\output.txt");
+        System.out.println("c" + c);
+        System.out.println("moooooooooooooooooooooooooooooooooo");
+        System.out.println(multi);
+        PrintWriter out = new PrintWriter("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\output.txt");
         for (int i = 0; i < output.size(); i++) {
             System.out.print(output.get(i).getKey());
             System.out.print(" : ");
