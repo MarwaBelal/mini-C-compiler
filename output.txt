@@ -1,10 +1,3 @@
-<ASTERICK> : /*mariam*/
-<DIVIDE> : /
-<ASTERICK> : *
-<BITWISE_XOR> : 
-<BITWISE_XOR> : 
-<ID> : mariam
-<BITWISE_XOR> : 
-<BITWISE_XOR> : 
+<ASTERICK> : /* mariam */
 <ASTERICK> : *
 <DIVIDE> : /

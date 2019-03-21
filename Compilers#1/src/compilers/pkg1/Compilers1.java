@@ -39,7 +39,7 @@ public class Compilers1 {
         System.out.println(data);
         String lines[] = data.split("\n|(?<=\\n)");
         int counter = 0;
-        String multi = " ";
+        String multi = "";
         for (int i = 0; i < lines.length; i++) {
             System.out.println(i + lines[i]);
             if (lines[i].contains("//")) {
@@ -49,7 +49,8 @@ public class Compilers1 {
             if (lines[i].contains("/*")) {
                 multi = lines[i];
                 System.out.println("hnaa "+ multi);
-                for(int j = i+1; j < lines.length; j++)
+                int j;
+                for( j=i+1 ; j < lines.length; j++)
                 {
                     if(lines[j].contains("*/"))
                     {
@@ -57,7 +58,10 @@ public class Compilers1 {
                         System.out.println("hnaaaaaaaaaaaaaaaaaaaaa "+ multi);
                         break;
                     }
-                    multi += lines[j];
+                    System.out.println("okayy");
+                    System.out.println(j+" "+ lines[j]);
+                    multi = multi+ lines[j];
+                    System.out.println(multi);
                 }
                 /*sInput.add(lines[i]);
                 for (int j = i + 1; j < lines.length; j++) {
@@ -68,6 +72,7 @@ public class Compilers1 {
                     sInput.add(lines[j]);
                 }*/
                 sInput.add(multi);
+                i +=j;
             }
             
             x = lines[i].split("(?<=\\(|\\[|\\{|=|\\+|-|/|\\*|!)|(?=\\)|\\]|\\}|=|\\+|-|/|\\*|!)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
