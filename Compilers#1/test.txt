@@ -1,10 +1,1 @@
-bool isPowerOfTwo (int x)\n
-{ \n
-// First x in the below expression is\n
-// for the case when x is 0\n
-return x || ( !(x & (x - 1))) x;\n
-<<};
-/*hi*/
-/*mariam
-marwa
-nagham*/
+int 2x = 5;
