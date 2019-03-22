@@ -44,6 +44,7 @@ public class Compilers1 {
         //String input = "(if) ( int) static 0 90 111 1nagham nagham3 _1 auto yes-yes 0.0 12 s, m; \"bla bla\" 'z' x1=x2 /x3 int intvalue = 10.0+5;  ";
         //String sInput[] = new String[100];
         List<String> sInput = new ArrayList<String>();
+<<<<<<< HEAD
         /*String input = "bool isPowerOfTwo (int x)\n" +
          "{ \n" +
          "// First x in the below expression is\n" +
@@ -55,6 +56,13 @@ public class Compilers1 {
         //sInput = input.split(" (?<=//)");
         //sInput = input.split("(?=\\))|(?<=\\()|(?<=\")|(?=\")|( |$)(?=(([^\"]*\"){2})*[^\"]*$)");
         String lines[] = input.split("\n|(?<=\\n)");
+=======
+        List<String> didntmatch = new ArrayList<String>();
+        String x[];
+        System.out.println("kl");
+        System.out.println(data);
+        String lines[] = data.split("\n|(?<=\\n)");
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
         int counter = 0;
         String multi = "";
         String temp = "";
@@ -69,6 +77,7 @@ public class Compilers1 {
                 continue;
             }
             if (lines[i].contains("/*")) {
+<<<<<<< HEAD
                 multi += lines[i].trim();
                 System.out.println("___________________________________________________");
                 //System.out.println(multi);  
@@ -92,21 +101,61 @@ public class Compilers1 {
                 i += counter;
                 continue;
             }
+=======
+                multi = lines[i];
+                System.out.println("hnaa " + multi);
+                int j;
+                for (j = i + 1; j < lines.length; j++) {
+                    if (lines[j].contains("*/")) {
+                        multi += lines[j];
+                        System.out.println("hnaaaaaaaaaaaaaaaaaaaaa " + multi);
+                        break;
+                    }
+                    System.out.println("okayy");
+                    System.out.println(j + " " + lines[j]);
+                    multi = multi + lines[j];
+                    System.out.println(multi);
+                }
+
+                sInput.add(multi);
+                i += j;
+            }
+
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
             x = lines[i].split("(?<=\\(|\\[|\\{|=|\\+|-|/|\\*|!)|(?=\\)|\\]|\\}|=|\\+|-|/|\\*|!)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
+
             for (int j = 0; j < x.length; j++) {
+<<<<<<< HEAD
                 //System.out.println(x[j]);
+=======
+
+                System.out.println(j + "    " + x[j]);
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
                 sInput.add(x[j]);
             }
 
         }
+<<<<<<< HEAD
         //sInput = input.split("(?<=\\(|\\+|\\*|-|=|/)|(?=\\)|\\*|\\+|-|=|/)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
+=======
+        int c = 0;
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
 
         for (int i = 0; i < sInput.size(); i++) {
             sInput.set(i, sInput.get(i).trim());
+            System.out.println("ppppppppppppppppp");
             System.out.println(sInput.get(i));
         }
+        List<String> sInput2 = new ArrayList<String>();
+        for (int y = 0; y < sInput.size(); y++) {
+            if (sInput.get(y).isEmpty()) {
+                continue;
+            }
+            System.out.println("yyyyyyyyyyyyyyyy " + y + "  " + sInput.get(y));
+            sInput2.add(sInput.get(y));
+        }
 
-        for (int i = 0; i < sInput.size(); i++) {
+        for (int i = 0; i < sInput2.size(); i++) {
             try {
                 //br = new BufferedReader(new FileReader(FILENAME));
                 fr = new FileReader(FILENAME);
@@ -118,16 +167,23 @@ public class Compilers1 {
                 String sCurrentLine;
                 String record;
                 String regex[];
+<<<<<<< HEAD
                 //System.out.println(sInput.get(i));
+=======
+                System.out.println(sInput2.get(i));
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
                 while ((record = br.readLine()) != null) {
                     //System.out.println(record);
                     regex = record.split(" ");
                     //System.out.println(regex[0]);
                     Pattern pattern = Pattern.compile(regex[0]);
-                    Matcher matcher = pattern.matcher(sInput.get(i));
+                    Matcher matcher = pattern.matcher(sInput2.get(i));
+                    
 
                     if (matcher.find()) {
-                        output.add(new Pair<String, String>(sInput.get(i), regex[1]));
+                        output.add(new Pair<String, String>(sInput2.get(i), regex[1]));
+                        System.out.println(new Pair<String, String>(sInput2.get(i), regex[1]));
+                        System.out.println("-------------------------------------------------------in");
                         break;
                     }
                 }
@@ -156,14 +212,44 @@ public class Compilers1 {
             }
 
         }
+<<<<<<< HEAD
 
+=======
+        for(int i =0; i <sInput2.size(); i++)
+        {
+            for(int j =0; j < output.size(); j++)
+            {
+                if(output.get(j).getValue() != sInput2.get(i))
+                    
+                {
+                    //System.out.println(output.get(j).getValue());
+                    didntmatch.add(sInput2.get(i));
+                    //System.out.println("didn'tmatch  "+ sInput2.get(i));
+                    
+                }
+                else
+                {
+                    System.out.println("equal");   
+                }
+            }
+        }
+        System.out.println("c" + c);
+        System.out.println("moooooooooooooooooooooooooooooooooo");
+        System.out.println(multi);
+        PrintWriter out = new PrintWriter("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\output.txt");
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
         for (int i = 0; i < output.size(); i++) {
             System.out.print(output.get(i).getKey());
             System.out.print(" : ");
             System.out.println(output.get(i).getValue());
         }
         System.out.println(output.size());
+<<<<<<< HEAD
         System.out.println(sInput.size());
 
+=======
+        System.out.println(sInput2.size());
+        out.close();
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
     }
 }

@@ -63,7 +63,11 @@ volatile\b <VIOLATIE>
 | <BITWISE_OR>
 || <OR>
 & <BITWISE_AND>
+<<<<<<< HEAD
 ^ <BITWISE_XOR>
+=======
+(^)& <BITWISE_XOR>
+>>>>>>> 98fafe85f5cea825f3c226c2f147392eb4cfee97
 >> <LEFT_SHIFT>
 << <RIGHT_SHIFT>
 ~ <BITWISE_NOT>
