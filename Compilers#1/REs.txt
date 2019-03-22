@@ -59,13 +59,12 @@ volatile\b <VIOLATIE>
 =< <GREAT_EQ>
 == <EQUAL>
 != <NOT_EQUAL>
-&& <AND>
-| <BITWISE_OR>
-|| <OR>
-& <BITWISE_AND>
-^ <BITWISE_XOR>
 >> <LEFT_SHIFT>
 << <RIGHT_SHIFT>
+| <BITWISE_OR>
+&& <AND>
+|| <OR>
+& <BITWISE_AND>
 ~ <BITWISE_NOT>
 [A-Za-z_][A-Za-z0-9_]* <ID>
 \d+ <INTEGRAL_LITERAL>

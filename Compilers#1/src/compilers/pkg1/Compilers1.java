@@ -118,6 +118,7 @@ public class Compilers1 {
                 String sCurrentLine;
                 String record;
                 String regex[];
+                Boolean flag= false;
                 //System.out.println(sInput.get(i));
                 while ((record = br.readLine()) != null) {
                     //System.out.println(record);
@@ -127,9 +128,13 @@ public class Compilers1 {
                     Matcher matcher = pattern.matcher(sInput.get(i));
 
                     if (matcher.find()) {
+                        flag = true;
                         output.add(new Pair<String, String>(sInput.get(i), regex[1]));
                         break;
                     }
+                }
+                if(flag==false){
+                    output.add(new Pair<String, String>(sInput.get(i),"<error:didn't match>"));
                 }
 
             } catch (IOException e) {
