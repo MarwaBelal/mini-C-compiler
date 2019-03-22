@@ -36,7 +36,6 @@ public class Compilers1 {
     //private static final String FILENAME = "C:\\Users\\LENOVO\\Documents\\GitHub\\mini-C-compiler\\REs.txt";
 
     public static void main(String[] args) throws Exception {
-        //List<String> output = new ArrayList<String>();
         String input = readFileAsString("C:\\Users\\LENOVO\\Desktop\\test.txt");
         ArrayList<Pair<String, String>> output
                 = new ArrayList<Pair<String, String>>();
@@ -98,13 +97,6 @@ public class Compilers1 {
                 //System.out.println(x[j]);
                 sInput.add(x[j]);
             }
-            //System.arraycopy(x, 0, sInput, sInput.length, x.length);
-            /*int length = sInput.length + x.length;
-             String[] result = new String[length];
-             System.arraycopy(sInput, 0, result, 0, sInput.length);
-             System.arraycopy(x, 0, result, sInput.length, x.length);
-             sInput = result;
-             counter+=x.length;*/
 
         }
         //sInput = input.split("(?<=\\(|\\+|\\*|-|=|/)|(?=\\)|\\*|\\+|-|=|/)|(?=\\;)|(?=\\,)|( |$)(?=(([^\"]*\"){2})*[^\"]*$)|(?=(([^\']*\'){2})*[^\']*$)( |$) ");
