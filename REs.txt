@@ -70,7 +70,7 @@
 ^(\|)$ <BITWISE_OR>
 ^(\|\|)$ <OR>
 & <BITWISE_AND>
-^ <BITWISE_XOR>
+(^)& <BITWISE_XOR>
 >> <LEFT_SHIFT>
 << <RIGHT_SHIFT>
 ~ <BITWISE_NOT>

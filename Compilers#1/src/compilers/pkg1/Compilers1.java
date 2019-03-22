@@ -35,6 +35,7 @@ public class Compilers1 {
         BufferedReader br = null;
         FileReader fr = null;
         List<String> sInput = new ArrayList<String>();
+        List<String> didntmatch = new ArrayList<String>();
         String x[];
         System.out.println("kl");
         System.out.println(data);
@@ -104,13 +105,13 @@ public class Compilers1 {
                     regex = record.split(" ");
                     Pattern pattern = Pattern.compile(regex[0]);
                     Matcher matcher = pattern.matcher(sInput2.get(i));
+                    
 
                     if (matcher.find()) {
                         output.add(new Pair<String, String>(sInput2.get(i), regex[1]));
+                        System.out.println(new Pair<String, String>(sInput2.get(i), regex[1]));
+                        System.out.println("-------------------------------------------------------in");
                         break;
-                    }
-                    if (!matcher.find()) {
-                        //System.out.println("kk");
                     }
                 }
             } catch (IOException e) {
@@ -128,6 +129,24 @@ public class Compilers1 {
                 }
             }
         }
+        for(int i =0; i <sInput2.size(); i++)
+        {
+            for(int j =0; j < output.size(); j++)
+            {
+                if(output.get(j).getValue() != sInput2.get(i))
+                    
+                {
+                    //System.out.println(output.get(j).getValue());
+                    didntmatch.add(sInput2.get(i));
+                    //System.out.println("didn'tmatch  "+ sInput2.get(i));
+                    
+                }
+                else
+                {
+                    System.out.println("equal");   
+                }
+            }
+        }
         System.out.println("c" + c);
         System.out.println("moooooooooooooooooooooooooooooooooo");
         System.out.println(multi);
@@ -139,7 +158,7 @@ public class Compilers1 {
             out.println(output.get(i).getValue() + " : " + output.get(i).getKey());
         }
         System.out.println(output.size());
-        System.out.println(sInput.size());
+        System.out.println(sInput2.size());
         out.close();
     }
 }
