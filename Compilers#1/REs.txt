@@ -43,7 +43,7 @@ volatile\b <VIOLATIE>
 \) <RIGHT_ROUND_B>
 , <COMMA>
 ; <SEMICOLON>
-\\. <DOT>
+\b\\.\b <DOT>
 ! <NOT>
 = <ASSIGN_OPERATOR>
 # <PREPROCESSOR>
@@ -67,8 +67,8 @@ volatile\b <VIOLATIE>
 [&] <BITWISE_AND>
 \b~\b <BITWISE_NOT>
 \b/^\b <BITWISE_XOR>
-[A-Za-z_][A-Za-z0-9_]* <ID>
-\d+ <INTEGRAL_LITERAL>
+\b[A-Za-z_][A-Za-z0-9_]*\b <ID>
+\b\d+\b <INTEGRAL_LITERAL>
 \"(.*?)\" <STRING_LITERAL>
 \'[a-z]\' <CHAR_LITERAL>
 \b[-+]?[0-9]+\.[0-9]+\b <FLOAT_LITERAL>
