@@ -25,10 +25,10 @@ public class Compilers1 {
         return data;
     }
 
-    private static final String FILENAME = "C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\REs.txt";
+    private static final String FILENAME = "C:\\Users\\LENOVO\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\REs.txt";
 
     public static void main(String[] args) throws Exception {
-        String input = readFileAsString("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\test.txt");
+        String input = readFileAsString("C:\\Users\\LENOVO\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\test.txt");
         ArrayList<Pair<String, String>> output = new ArrayList<Pair<String, String>>();
         BufferedReader br = null;
         FileReader fr = null;
@@ -125,7 +125,7 @@ public class Compilers1 {
                 }
             }
         }
-        PrintWriter out = new PrintWriter("C:\\Users\\Mariam\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\output.txt");
+        PrintWriter out = new PrintWriter("C:\\Users\\LENOVO\\Documents\\GitHub\\mini-C-compiler\\Compilers#1\\output.txt");
         for (int i = 0; i < output.size(); i++) {
             System.out.print(output.get(i).getKey());
             System.out.print(" : ");
