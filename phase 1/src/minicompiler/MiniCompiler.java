@@ -88,7 +88,7 @@ public class MiniCompiler {
         //Syntax Analyzer 
         List<token> reads = new ArrayList<token>();
         token t = new token();
-        String readTokens = new String(Files.readAllBytes(Paths.get("C:\\Users\\Belal\\Desktop\\mini-C-compiler-master\\phase 1\\output.txt")));
+        String readTokens = new String(Files.readAllBytes(Paths.get("C:\\Users\\Belal\\Desktop\\mini-C-compiler-master\\phase 1\\outputt.txt")));
         for (int i = 0; i < tokens.size(); i++) {
         //  t.str = tokens.get(i).str;
             t.token = tokens.get(i).token;
