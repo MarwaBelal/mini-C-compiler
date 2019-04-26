@@ -1,5 +1,0 @@
-<INT> : int
-<error:didn't match> : 2x
-<ASSIGN_OPERATOR> : =
-<INTEGRAL_LITERAL> : 5
-<SEMICOLON> : ;
