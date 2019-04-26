@@ -15,7 +15,7 @@ public class node {
     public void print(node n){
         if(n != null){
             print(n.left);
-            System.out.println("" + n.value);
+            System.out.println(" " + n.value);
             print(n.right);
         }
     }
